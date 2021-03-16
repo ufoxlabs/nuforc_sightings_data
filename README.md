@@ -11,7 +11,7 @@ To get started, cd into the project root and run
 
 ```shell
 make create_environment
-source activate nuforc
+conda activate nuforc
 
 make requirements
 
