@@ -1,6 +1,6 @@
 # NUFORC Sighting Reports
 
-The Nationa UFO Research Center ([NUFORC](http://www.nuforc.org/)) maintains an online database of over 100,000 UFO sightings including city, shape, and a text description.
+The National UFO Research Center ([NUFORC](http://www.nuforc.org/)) maintains an online database of over 100,000 UFO sightings including city, shape, and a text description.
 This project contains the code necessary to collect the data in the database, perform some standardization and cleaning, and geocode the sightings at the city/state level.
 
 ## Quickstart
