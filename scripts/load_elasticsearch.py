@@ -7,55 +7,52 @@ from csv import DictReader
 from elasticsearch.helpers import streaming_bulk
 
 nuforc_report_index_name = 'nuforc'
-nuforc_report_type_name = 'nuforc_report'
 
 nuforc_report_index_body = {
     "mappings": {
-        nuforc_report_type_name: {
-            "properties": {
-                "text": {
-                    "type": "text"
-                },
-                "stats": {
-                    "type": "text"
-                },
-                "date_time": {
-                    "type": "date",
-                    "format": "date_hour_minute_second",
-                    "ignore_malformed": True
-                },
-                "report_link": {
-                    "type": "text"
-                },
-                "city": {
-                    "type": "keyword"
-                },
-                "state": {
-                    "type": "keyword"
-                },
-                "shape": {
-                    "type": "keyword"
-                },
-                "duration": {
-                    "type": "text"
-                },
-                "summary": {
-                    "type": "text"
-                },
-                "posted": {
-                    "type": "date",
-                    "format": "date_hour_minute_second",
-                    "ignore_malformed": True
-                },
-                "city_latitude": {
-                    "type": "float"
-                },
-                "city_longitude": {
-                    "type": "float"
-                },
-                "location": {
-                    "type": "geo_point"
-                }
+        "properties": {
+            "text": {
+             "type": "text"
+            },
+            "stats": {
+             "type": "text"
+            },
+            "date_time": {
+             "type": "date",
+             "format": "date_hour_minute_second",
+             "ignore_malformed": True
+            },
+            "report_link": {
+             "type": "text"
+            },
+            "city": {
+             "type": "keyword"
+            },
+            "state": {
+             "type": "keyword"
+            },
+            "shape": {
+             "type": "keyword"
+            },
+            "duration": {
+             "type": "text"
+            },
+            "summary": {
+             "type": "text"
+            },
+            "posted": {
+             "type": "date",
+             "format": "date_hour_minute_second",
+             "ignore_malformed": True
+            },
+            "city_latitude": {
+             "type": "float"
+            },
+            "city_longitude": {
+             "type": "float"
+            },
+            "location": {
+             "type": "geo_point"
             }
         }
     }
@@ -67,7 +64,6 @@ def nuforc_bulk_action(doc, doc_id):
     return {
         "_op_type": "index",
         "_index": nuforc_report_index_name,
-        "_type": nuforc_report_type_name,
         "_id": doc_id,
         "_source": {
             "location": {
