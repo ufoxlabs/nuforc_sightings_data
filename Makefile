@@ -19,7 +19,7 @@ data/raw/nuforc_reports.json:
 		--output-format jsonlines
 
 data/external/cities.csv:
-	wget -O GeoLite2-City-CSV.zip https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City-CSV\&license_key=YOUR_LICENSE_KEY\&suffix=zip
+	wget -O GeoLite2-City-CSV.zip https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City-CSV\&license_key=${GEOLITE_KEY}\&suffix=zip
 	unzip GeoLite2-City-CSV.zip
 	mv GeoLite2-City-CSV_* data/external/geolite_city
 	mv GeoLite2-City-CSV.zip data/external/
